@@ -1,0 +1,7 @@
+/*
+!.gitignore
+!snippets/
+!config-snippets.el
+!extra-key-bindings.el
+!packages.el
+!setup-auctex.el
