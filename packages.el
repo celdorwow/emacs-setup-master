@@ -14,10 +14,9 @@
 
 ;; Add Elpa, Melpa and Org to a list of archives
 (setq use-package-always-ensure t)
-(dolist (package '(("melpa" . "https://melpa.org/packages/")
-		   ("elpa" . "https://elpa.gnu.org/packages/")
-		   ("org" . "http://orgmode.org/elpa/")))
-  (add-to-list 'package-archives package))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 
 ;; Org Mode settngs
