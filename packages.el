@@ -139,6 +139,10 @@
     (org-roam-db-autosync-mode)))
 
 
+(use-package markdown-mode
+  :hook (markdown-mode . (lambda () (visual-line-mode 1))))
+
+
 ;; Use keybindings
 (use-package grip-mode  ;; auto rendering markdown file
   :ensure t
