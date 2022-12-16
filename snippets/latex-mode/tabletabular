@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Table based on tabular 
+# key: table
+# --
+\begin{table}[tbh]
+  \centering
+  \caption{${1:Example table}}
+  \begin{tabular}{ccc}
+    $2 & & \\
+     & &
+  \end{tabular}
+\end{table}
+$0

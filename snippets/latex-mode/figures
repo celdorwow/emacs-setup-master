@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Figures
+# key: figure
+# --
+\begin{figure}${1:[${2:tbh}]}
+  \centering
+  \includegraphics[width=${3:0.5}\linewidth]{${4:example-image}}
+  \caption{${5:Example figure}}
+\end{figure}
+$0

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Show frame with settings 
+# key: showfr
+# --
+\usepackage{showframe}
+\renewcommand*\ShowFrameLinethickness{0.2pt}
+\renewcommand*\ShowFrameColor{\color{${1:blue}}}
+$0

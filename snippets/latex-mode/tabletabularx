@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Table based on tabularx
+# key: tablex
+# --
+\begin{table}[tbh]
+  \centering
+  \caption{${1:Example table}}
+  \begin{tabularx}{$2\\linewidth}{l XX}
+    $3 & & \\
+     & &
+  \end{tabularx}
+\end{table}
+$0

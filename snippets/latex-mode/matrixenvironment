@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Math matrix environment
+# key: mat
+# --
+\begin{matrix}
+  $1
+\end{matrix}
+$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Add new command (xparse) 
+# key: newx
+# --
+\NewDocumentCommand{\\${1:name}}{${2:s O{} m}}{%
+  ${3:% code here}}
+$0

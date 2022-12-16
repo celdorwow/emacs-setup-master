@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Math align environment
+# key: al
+# --
+\begin{align$1}
+  $2
+\end{align$1}
+$0

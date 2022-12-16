@@ -63,7 +63,9 @@ automatically included."
 		   (lambda () (multiple-cursors-mode))
 		   (lambda () (setq line-spacing 0.2))
 		   (lambda () (local-set-key (kbd "C-c C-;") 'LaTeX-comment-whole-line))
-       (lambda () (setq reftex-ref-style-default-list '("Default" "Cleveref")))
+		   (lambda () (setq TeX-indent-open-delimiters "["
+				    TeX-indent-close-delimiters "]"))
+		   (lambda () (setq reftex-ref-style-default-list '("Default" "Hyperref" "Cleveref" "AMSmath")))
 		   ))
   (add-hook 'LaTeX-mode-hook command))
 

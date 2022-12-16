@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Newdocument environment (xparse) 
+# key: newex
+# --
+\NewDocumentEnvironment{${1:name}}{${2:s O{} m} +b}{%
+  #4
+}{$3}
+$0
