@@ -28,7 +28,10 @@
 			       (visual-line-mode 1)))
   :config
   (setq org-ellipsis " ▾")
-  (setq org-agenda-files '("~/Documents/emacs-org/tasks.org")))
+  (setq org-agenda-files '("~/Documents/emacs-org/tasks.org"))
+  :bind (:map org-mode-map
+	      ("C-S-<right>" . nil)
+	      ("C-S-<left>" . nil)))
 ;; org-hide-emphasis-markers t))
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)

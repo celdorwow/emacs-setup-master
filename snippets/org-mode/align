@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Align environment
+# key: al
+# --
+$$
+\begin{align}
+    $0 \\
+    &= 
+\end{align}
+$$
