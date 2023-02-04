@@ -157,14 +157,23 @@
 ;  :hook ((markdown-mode org-mode) . grip-mode))
 
 
+;;
 (use-package evil
   :config (evil-mode 1))
 
 
+;;
 (use-package magit)
 
 
+;;
 (use-package csv-mode)
+
+
+;;
+(use-package pdf-tools
+  :config (pdf-tools-install))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; "Might setup later" content

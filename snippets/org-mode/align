@@ -1,10 +1,12 @@
 # -*- mode: snippet -*-
 # name: Align environment
+# contributor: Zbigniew Kozieł
+# group: align
 # key: al
 # --
-$$
+${1:\$\$$$(yas-choose-value '("\\\\[" "$$"))}
 \begin{align}
     $0 \\
     &= 
 \end{align}
-$$
+${1:$(if (string= yas-text "\\\\[") "\\\\]" "$$")}

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Inline mathmode
+# contributor: Zbigniew Kozieł
+# group: math
+# key: in
+# --
+\($1\)$0

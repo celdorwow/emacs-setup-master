@@ -1,0 +1,32 @@
+# -*- mode: snippet -*-
+# name: Symbol alpha
+# contributor: Zbigniew Kozieł
+# group: greeks
+# binding: C-c w s
+# key: alpha
+# --
+${1:$$(yas-choose-value '(
+"\\\\alpha"
+"\\\\beta"
+"\\\\gamma"
+"\\\\delta"
+"\\\\epsilon"
+"\\\\zeta"
+"\\\\eta"
+"\\\\theta"
+"\\\\iota"
+"\\\\kappa"
+"\\\\lambda"
+"\\\\mu"
+"\\\\nu"
+"\\\\omicron"
+"\\\\pi"
+"\\\\rho"
+"\\\\sigma"
+"\\\\tau"
+"\\\\upsilon"
+"\\\\phi"
+"\\\\chi"
+"\\\\psi"
+"\\\\omega"
+))}$0

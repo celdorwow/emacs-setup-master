@@ -66,6 +66,14 @@ automatically included."
 		   (lambda () (setq TeX-indent-open-delimiters "["
 				    TeX-indent-close-delimiters "]"))
 		   (lambda () (setq reftex-ref-style-default-list '("Default" "Hyperref" "Cleveref" "AMSmath")))
+		   (lambda () (setq TeX-debug-warning t
+				    TeX-debug-bad-boxes t))
+		   (lambda () (define-key LaTeX-mode-map (kbd "<f5>")
+				(lambda ()
+				  "Save the buffer and run `TeX-command-run-all`."
+				  (interactive)
+				  (let (TeX-save-query) (TeX-save-document (TeX-master-file)))
+				  (TeX-command-run-all nil))))
 		   ))
   (add-hook 'LaTeX-mode-hook command))
 
@@ -76,3 +84,7 @@ automatically included."
 
 ;; Keyboard assign to the function above
 (add-hook 'TeX-fold-mode-hook (lambda () (define-key TeX-fold-mode-map (kbd "C-c C-o C-k") 'zbg/latex-fold-any)))
+
+
+;;
+;; Keyboard assign to the TeX-command-run-all
