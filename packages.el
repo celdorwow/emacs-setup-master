@@ -1,23 +1,16 @@
-;; *** PACKAGES ***************************************************************
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; Initial settings
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; Use Package
-(require 'package)
-(require 'use-package)
-
-
-;; Add Elpa, Melpa and Org to a list of archives
+;; Load use-package
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 (setq use-package-always-ensure t)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-
 
 ;; Org Mode settngs
 (global-set-key (kbd "C-c l") #'org-store-link)
