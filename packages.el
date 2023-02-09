@@ -12,6 +12,12 @@
   (package-install 'use-package))
 (setq use-package-always-ensure t)
 
+
+;;; Load package from here
+
+;; Atom One Dark
+(use-package atom-one-dark-theme)
+
 ;; Org Mode settngs
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
