@@ -82,7 +82,9 @@
   (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
   :init
   (persp-mode))
-
+;; The line below forces ediff to use plain window and displays menu in the echo area
+;; Importantly, it eliminates poitential error with when a new frame is open by ediff
+(customize-set-variable 'ediff-window-setup-function 'ediff-setup-windows-plain)
 
 (use-package ivy
   :diminish ivy-mode
