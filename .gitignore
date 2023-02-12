@@ -5,3 +5,6 @@
 !extra-key-bindings.el
 !packages.el
 !setup-auctex.el
+!setup-lsp.el
+!setup-treemacs.el
+
