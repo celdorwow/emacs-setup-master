@@ -10,6 +10,7 @@
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c M-l")
+  :config (setq lsp-diagnostics-provider :none)
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          (LaTeX-mode . lsp)
 	 (latex-mode . lsp)
@@ -23,12 +24,8 @@
 ;; if you are ivy user
 (use-package lsp-ivy
   :commands lsp-ivy-workspace-symbol)
-(use-package lsp-treemacs
-  :commands lsp-treemacs-errors-list)
-;; which-key integration
-(use-package which-key
-  :config
-  (which-key-mode))
+;; (use-package lsp-treemacs
+;;   :commands lsp-treemacs-errors-list)
 
 ;; The path to lsp-mode needs to be added to load-path as well as the
 ;; path to the `clients' subdirectory.
