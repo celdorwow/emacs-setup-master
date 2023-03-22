@@ -47,15 +47,25 @@ automatically included."
 ;; Setup AUCTeX on load
 (dolist (command '((lambda ()
 			     (push
-			      '("LaTeXmk" "latexmk -lualatex -synctex=1 -interaction=nonstopmode %s" TeX-run-TeX nil t
-				:help "Run Latexmk on file")
+			      '("LaTeXmk [lualatex]" "latexmk -lualatex -synctex=1 -interaction=nonstopmode %s" TeX-run-TeX nil t
+				:help "Run Latexmk with lualatex on file")
 			      TeX-command-list))
 		   (lambda ()
 			     (push
-			      '("Force LaTeXmk" "latexmk -gg -lualatex -synctex=1 -interaction=nonstopmode %s" TeX-run-TeX nil t
-				:help "Force to run Latexmk on file")
+			      '("Force LaTeXmk [lualatex]" "latexmk -gg -lualatex -synctex=1 -interaction=nonstopmode %s" TeX-run-TeX nil t
+				:help "Force to run Latexmk with lualatex on file")
 			      TeX-command-list))
-		   (lambda () (setq TeX-command-default "LaTeXmk"))
+		   (lambda ()
+			     (push
+			      '("LaTeXmk [pdflatex]" "latexmk -pdflatex -synctex=1 -interaction=nonstopmode %s" TeX-run-TeX nil t
+				:help "Force to run Latexmk with lualatex on file")
+			      TeX-command-list))
+		   (lambda ()
+			     (push
+			      '("Force LaTeXmk [pdflatex]" "latexmk -gg -pdflatex -synctex=1 -interaction=nonstopmode %s" TeX-run-TeX nil t
+				:help "Force to run Latexmk with lualatex on file")
+			      TeX-command-list))
+		   (lambda () (setq TeX-command-default "LaTeXmk [lualatex]"))
 		   (lambda () (visual-line-mode t))
 		   (lambda () (setq font-latex-fontify-script nil))
 		   (lambda () (rainbow-delimiters-mode))
