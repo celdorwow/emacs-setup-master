@@ -122,7 +122,11 @@
 (use-package yasnippet
   :diminish yas-global-mode
   :config
-  (yas-global-mode 1))
+  (progn
+    (yas-global-mode 1)
+    (setq yas-key-syntaxes '(yas-longest-key-from-whitespace "()" "$"))   ;; allows exapnding inside $$ and \(\)
+    (setq yas-triggers-in-field t))   ;; allows expanding inside other snippets
+  )
 
 
 (use-package multiple-cursors

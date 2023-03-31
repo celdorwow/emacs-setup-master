@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Probability
+# key: \P
+# --
+\Prob${1:[p]}{${2:X}}${3:[Z]}$0

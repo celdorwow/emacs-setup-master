@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name:Math vector 
+# key: \W
+# --
+\\Wec{${1:x}}$0

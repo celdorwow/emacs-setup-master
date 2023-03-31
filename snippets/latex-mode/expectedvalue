@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Expected value 
+# key: \E
+# --
+\\Expected{${1:X}}{${2:X\sim \\Prob\{X\}}}$0

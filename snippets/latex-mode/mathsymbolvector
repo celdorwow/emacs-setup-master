@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name:Math symbol vector
+# key: \B
+# --
+\\Bec{${1:\mu}}$0

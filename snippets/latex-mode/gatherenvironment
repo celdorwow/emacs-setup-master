@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Math gather environment
+# key: ga
+# --
+\begin{gather$1}
+  $2
+\end{gather$1}
+$0
