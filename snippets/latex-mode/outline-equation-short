@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:Short way to render outline equation 
+# key: [[
+# --
+\\[
+  $1
+\\]$0

@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: Expected value 
-# key: \E
+# name: Expected value with optional parameters
+# key: \EE
 # --
-\\Expected{${1:X}}{${2:X\sim \\Prob\{X\}}}$0
+\\Expected${1:_\{X\}}${2:[P]}\{${3:X}\}${4:[X \\sim \\Prob\{X\}]}

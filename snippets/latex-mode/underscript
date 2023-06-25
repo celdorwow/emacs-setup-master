@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Underscript
+# key: _
+# --
+_\{$1\}$0

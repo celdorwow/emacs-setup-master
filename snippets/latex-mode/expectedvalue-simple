@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Expected value - simple
+# key: \E
+# --
+\\Expected{${1:X}}$0
