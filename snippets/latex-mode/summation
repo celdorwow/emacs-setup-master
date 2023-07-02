@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: summation
+# key: \S
+# --
+\\sum${1:_\{${2:i=1}\}}${3:^\{${4:N}\}}$0
