@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: Probability
-# key: \PP
+# key: \pp
 # --
 \Prob${1:_\{${2:X}\}}${3:[${4:p}]}\{${5:x}\}${6:[$7]}$0
