@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Math caligraphic symbols
+# key: \cal
+# --
+\\mathcal{${1:D}}$0

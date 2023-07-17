@@ -2,4 +2,4 @@
 # name:Math symbol vector
 # key: \B
 # --
-\\Bec{${1:\mu}}$0
+\\Bec\{${1:\mu}\}$0
