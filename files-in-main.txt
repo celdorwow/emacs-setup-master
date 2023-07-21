@@ -1,0 +1,9 @@
+config-snippets.el
+extra-key-bindings.el
+packages.el
+projectile-bookmarks.eld
+setup-auctex.el
+setup-lsp.el
+setup-treemacs.el
+snippets/
+transient/
