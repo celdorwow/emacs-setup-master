@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Link target
+# key: tar
+# --
+<<${1:target}>>$0

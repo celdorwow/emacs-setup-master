@@ -12,6 +12,29 @@ automatically included."
       (while (re-search-forward (format "begin{%s\\*?}" env) nil t)
         (TeX-fold-env)))))
 
+(defun LaTeX-env-tabularray (environment)
+  "Insert ENVIRONMENT with position and column specifications.
+Just like array and tabular."
+  (let ((pos (and LaTeX-default-position ; LaTeX-default-position can
+                                        ; be nil, i.e. do not prompt
+                  (TeX-read-string "(Optional) Outer: " LaTeX-default-position)))
+        (fmt (TeX-read-string
+              (if (string= LaTeX-default-format "")
+                  "Inner: "
+                (format "Inner (default %s): " LaTeX-default-format))
+              nil nil
+              (if (string= LaTeX-default-format "")
+                  nil
+                LaTeX-default-format)) ))
+    (setq LaTeX-default-position pos)
+    (setq LaTeX-default-format fmt)
+    (LaTeX-insert-environment environment
+                              (concat
+                               (unless (zerop (length pos))
+                                 (concat LaTeX-optop pos LaTeX-optcl))
+                               (concat TeX-grop fmt TeX-grcl)))
+    (LaTeX-item-array t)))
+
 
 ;; Electric indent mode
 (defun zbg/remove-electric-indend-mode ()
@@ -84,6 +107,13 @@ automatically included."
 				  (interactive)
 				  (let (TeX-save-query) (TeX-save-document (TeX-master-file)))
 				  (TeX-command-run-all nil))))
+		   ;; Add support for tabularray 
+		   (lambda () (push '("tblr" LaTeX-indent-tabular) LaTeX-indent-environment-list))
+		   (lambda () (push '("longtblr" LaTeX-indent-tabular) LaTeX-indent-environment-list))
+		   (lambda () (push '("talltblr" LaTeX-indent-tabular) LaTeX-indent-environment-list))
+		   (lambda () (LaTeX-add-environments '("tblr" LaTeX-env-tabularray)))
+		   (lambda () (LaTeX-add-environments '("talltblr" LaTeX-env-tabularray)))
+		   (lambda () (LaTeX-add-environments '("longtblr" LaTeX-env-tabularray)))
 		   ))
   (add-hook 'LaTeX-mode-hook command))
 
