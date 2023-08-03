@@ -27,8 +27,11 @@
 			       (visual-line-mode 1)))
   :config
   (setq org-ellipsis " ▾")
-  (setq org-agenda-files '("~/Documents/emacs-org/tasks.org"))
+  (setq org-directory "~/Documents/emacs-org")
+  (setq org-agenda-files (concat org-directory "/tasks.org"))
+  (setq org-default-notes-file (concat org-directory "/notes.org"))
   :bind (:map org-mode-map
+	      ("C-c <tab>" . 'pcomplete-list)
 	      ("C-S-<right>" . nil)
 	      ("C-S-<left>" . nil)))
 ;; org-hide-emphasis-markers t))
@@ -49,7 +52,8 @@
 (font-lock-add-keywords 'org-mode
                         '(("^ *\\([-]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
+;; Custom hyperref template
+(customize-set-value 'org-latex-hyperref-template "\\hypersetup{\n  colorlinks,\n  pdfauthor={%a},\n  pdftitle={%t},\n  pdfkeywords={%k},\n  pdfsubject={%d},\n  pdfcreator={%c},\n  pdflang={%L},\n}\n")
 
 ;; Visual Regular Expressions
 (use-package visual-regexp
