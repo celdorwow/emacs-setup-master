@@ -31,7 +31,7 @@
   (setq org-agenda-files (concat org-directory "/tasks.org"))
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   :bind (:map org-mode-map
-	      ("C-c <tab>" . 'pcomplete-list)
+	      ("C-c v" . 'pcomplete-list)
 	      ("C-S-<right>" . nil)
 	      ("C-S-<left>" . nil)))
 ;; org-hide-emphasis-markers t))
