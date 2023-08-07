@@ -18,43 +18,6 @@
 ;; Atom One Dark
 (use-package atom-one-dark-theme)
 
-;; Org Mode settngs
-(global-set-key (kbd "C-c l") #'org-store-link)
-(global-set-key (kbd "C-c a") #'org-agenda)
-(global-set-key (kbd "C-c c") #'org-capture)
-(use-package org
-  :hook (org-mode . (lambda () (org-indent-mode 1)
-			       (visual-line-mode 1)))
-  :config
-  (setq org-ellipsis " ▾")
-  (setq org-directory "~/Documents/emacs-org")
-  (setq org-agenda-files (concat org-directory "/tasks.org"))
-  (setq org-default-notes-file (concat org-directory "/notes.org"))
-  :bind (:map org-mode-map
-	      ("C-c v" . 'pcomplete-list)
-	      ("C-S-<right>" . nil)
-	      ("C-S-<left>" . nil)))
-;; org-hide-emphasis-markers t))
-(use-package org-bullets
-  :hook (org-mode . org-bullets-mode)
-  :config (setq org-bullets-bullet-list '("◉" "○" "◎" "○" "☉" "◌")))
-;; Set faces for heading levels
-(dolist (face '((org-level-1 . 1.5)
-                (org-level-2 . 1.3)
-                (org-level-3 . 1.2)
-                (org-level-4 . 1.1)
-                (org-level-5 . 1.0)
-                (org-level-6 . 1.0)
-                (org-level-7 . 1.0)
-                (org-level-8 . 1.0)))
-  (set-face-attribute (car face) nil :font "DejaVu Sans Book" :weight 'regular :height (cdr face)))
-;; Replace list hyphen with dot
-(font-lock-add-keywords 'org-mode
-                        '(("^ *\\([-]\\) "
-                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-;; Custom hyperref template
-(customize-set-value 'org-latex-hyperref-template "\\hypersetup{\n  colorlinks,\n  pdfauthor={%a},\n  pdftitle={%t},\n  pdfkeywords={%k},\n  pdfsubject={%d},\n  pdfcreator={%c},\n  pdflang={%L},\n}\n")
-
 ;; Visual Regular Expressions
 (use-package visual-regexp
   :bind(("C-c r" . vr/replace)
@@ -62,14 +25,12 @@
 	("C-c m" . vr/mc-mark) ;; conflict with AUCTeX
 	))
 
-
 ;; Which key
 (use-package which-key
   :diminish which-key-mode
   :init (which-key-mode)
   :config
   (setq which-key-idle-delay 0.5))
-
 
 ;;; Add workspaces
 (use-package projectile
@@ -122,7 +83,6 @@
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 
-
 (use-package yasnippet
   :diminish yas-global-mode
   :config
@@ -132,24 +92,10 @@
     (setq yas-triggers-in-field t))   ;; allows expanding inside other snippets
   )
 
-
 (use-package multiple-cursors
   :bind (("C->" . mc/mark-next-like-this)
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C->" . mc/mark-all-like-this)))
-
-
-;; Organasing notes
-(use-package org-roam
-  :ensure t
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-	 ("C-c n f" . org-roam-node-find)
-	 ("C-c n i" . org-roam-node-insert))
-  :config
-  (progn
-    (setq org-roam-directory (file-truename "~/Documents/org-roam"))
-    (org-roam-db-autosync-mode)))
-
 
 (use-package markdown-mode
   :hook (markdown-mode . (lambda () (visual-line-mode 1))))
@@ -165,19 +111,15 @@
 ;  :ensure t
 ;  :hook ((markdown-mode org-mode) . grip-mode))
 
-
 ;;
 (use-package evil
   :config (evil-mode 1))
 
-
 ;;
 (use-package magit)
 
-
 ;;
 (use-package csv-mode)
-
 
 ;;
 (use-package pdf-tools
