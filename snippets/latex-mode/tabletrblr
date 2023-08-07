@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: Table based on tblr
+# key: tabtblr
+# --
+\begin{table}[tbh]
+  \centering
+  ${1:\caption\{${2:Example table}\}\label\{tab:${3:example-table}\}
+  }\begin\{tblr\}\{
+    width = \linewidth,
+    colspec = \{${4:Q[l] Q[c,m] X}\},
+    row\{1\} = \{font=\bfseries\},
+    hlines, vlines,
+    \}
+    $5 & & \\
+    & &
+  \end\{tblr\}
+\end\{table\}
+$0
