@@ -7,4 +7,5 @@
 !setup-auctex.el
 !setup-lsp.el
 !setup-treemacs.el
+!setup-org.el
 !files-in-main.txt
