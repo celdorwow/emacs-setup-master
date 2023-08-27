@@ -1,11 +1,12 @@
 ;; *** Load custom files
 (let ((folder "~/.config/emacs/")
       (packages '("basicinit.el"
-	       "packages.el"
-	       "setup-auctex.el"
-	       "setup-lsp.el"
-	       "extra-key-bindings.el"
-	       )))
+		  "packages.el"
+		  "setup-org.el"
+		  "setup-auctex.el"
+		  "setup-lsp.el"
+		  "extra-key-bindings.el"
+		  )))
   (dolist (x packages)
     (let ((file (concat folder x)))
       (load file)))); "setup-treemacs.el"
