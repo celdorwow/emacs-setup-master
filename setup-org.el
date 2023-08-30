@@ -3,8 +3,11 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
 (use-package org
-  :hook (org-mode . (lambda () (org-indent-mode 1)
-			       (visual-line-mode 1)))
+  :hook
+  (org-mode . (lambda ()
+                (org-indent-mode 1)
+                (visual-line-mode 1)
+                (require 'ox-md nil t)))
   :config
   (setq org-ellipsis " ▾")
   (setq org-directory "~/Documents/emacs-org")
