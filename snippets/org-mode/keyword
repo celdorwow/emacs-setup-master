@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Key word
+# key: kw
+# --
+=$1=

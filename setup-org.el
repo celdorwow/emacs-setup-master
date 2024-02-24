@@ -10,9 +10,9 @@
                 (require 'ox-md nil t)))
   :config
   (setq org-ellipsis " ▾")
-  (setq org-directory "~/Documents/emacs-org")
-  (setq org-agenda-files (concat org-directory "/tasks.org"))
-  (setq org-default-notes-file (concat org-directory "/notes.org"))
+  (setq org-directory (concat (getenv "USERPROFILE") "/"))
+  (setq org-agenda-files (concat org-directory "tasks.org"))
+  (setq org-default-notes-file (concat org-directory "notes.org"))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.25))
   :bind (:map org-mode-map
 	      ("C-c v" . 'pcomplete-list)
