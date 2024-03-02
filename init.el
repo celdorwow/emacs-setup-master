@@ -11,6 +11,10 @@
     (let ((file (concat folder x)))
       (load file)))); "setup-treemacs.el"
 
+;; lsp-latex
+(use-package lsp-latex
+  :config (setq lsp-latex-texlab-executable "/opt/applications/texlab/texlab"))
+
 
 ;;; Keep this as the last entity
 (custom-set-variables
