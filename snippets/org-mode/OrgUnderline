@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Org Underline
+# key: __
+# --
+_$1_$0

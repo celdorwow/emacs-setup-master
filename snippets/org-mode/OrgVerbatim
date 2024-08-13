@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Org Verbatim
+# key: ==
+# --
+=$1=$0

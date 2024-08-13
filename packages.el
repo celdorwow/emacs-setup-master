@@ -13,6 +13,25 @@
 (setq use-package-always-ensure t)
 
 
+;; START
+(defun use-package-require (name &optional no-require body)
+  (if use-package-expand-minimally
+      (use-package-concat
+       (unless no-require
+         (list (use-package-load-name name)))
+       body)
+    (if no-require
+        body
+      (use-package-with-elapsed-timer
+          (format "Loading package %s" name)
+        `((if (not ,(use-package-load-name name))
+              (display-warning 'use-package
+                               (format "Cannot load %s" ',name)
+                               :error)
+            ,@body))))))
+;; END
+
+
 ;;; Load package from here
 
 ;; Atom One Dark
@@ -122,9 +141,10 @@
 (use-package csv-mode)
 
 ;;
-(use-package pdf-tools
-  :config (pdf-tools-install))
+;; (use-package pdf-tools
+;;   :config (pdf-tools-install))
 
+(use-package powershell)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; "Might setup later" content
