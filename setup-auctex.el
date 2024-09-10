@@ -40,6 +40,8 @@ Just like array and tabular."
 (defun zbg/remove-electric-indend-mode ()
   (electric-indent-local-mode -1))
 
+(defun zbg/push-unless (item envlist)
+  (unless (member item envlist) (push item envlist)))
 
 
 
@@ -108,9 +110,9 @@ Just like array and tabular."
 				  (let (TeX-save-query) (TeX-save-document (TeX-master-file)))
 				  (TeX-command-run-all nil))))
 		   ;; Add support for tabularray 
-		   (lambda () (push '("tblr" LaTeX-indent-tabular) LaTeX-indent-environment-list))
-		   (lambda () (push '("longtblr" LaTeX-indent-tabular) LaTeX-indent-environment-list))
-		   (lambda () (push '("talltblr" LaTeX-indent-tabular) LaTeX-indent-environment-list))
+		   (lambda () (cl-pushnew '("tblr" LaTeX-indent-tabular) LaTeX-indent-environment-list :test #'equal))
+		   (lambda () (cl-pushnew '("longtblr" LaTeX-indent-tabular) LaTeX-indent-environment-list :test #'equal))
+		   (lambda () (cl-pushnew '("talltblr" LaTeX-indent-tabular) LaTeX-indent-environment-list :test #'equal))
 		   (lambda () (LaTeX-add-environments '("tblr" LaTeX-env-tabularray)))
 		   (lambda () (LaTeX-add-environments '("talltblr" LaTeX-env-tabularray)))
 		   (lambda () (LaTeX-add-environments '("longtblr" LaTeX-env-tabularray)))
