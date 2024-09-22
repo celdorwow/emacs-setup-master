@@ -146,6 +146,11 @@
 
 (use-package powershell)
 
+;; Lua
+(use-package lua-mode
+  :custom
+  (lua-indent-level 2))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; "Might setup later" content
 
