@@ -7,6 +7,7 @@
   (org-mode . (lambda ()
                 (org-indent-mode 1)
                 (visual-line-mode 1)
+		(flyspell-mode 1)
                 (require 'ox-md nil t)))
   :config
   (setq org-ellipsis " ▾")
@@ -14,6 +15,7 @@
   (setq org-agenda-files (concat org-directory "tasks.org"))
   (setq org-default-notes-file (concat org-directory "notes.org"))
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.25))
+  (setq ispell-local-dictionary  "en_GB")
   :bind (:map org-mode-map
 	      ("C-c v" . 'pcomplete-list)
 	      ("C-S-<right>" . nil)
@@ -48,5 +50,5 @@
 	 ("C-c n i" . org-roam-node-insert))
   :config
   (progn
-    (setq org-roam-directory (file-truename "~/Documents/org-roam"))
+    (setq org-roam-directory (file-truename (concat (getenv "LOCALAPPDATA") "/OrgRoam")))
     (org-roam-db-autosync-mode)))

@@ -26,5 +26,4 @@
 		       ("\\EE" "\\\\Expected${1:_\\{X\\}}${2:[P]}\\{${3:X}\\}${4:[X \\\\sim \\\\Prob\\{X\\}]}" "Expected value with optional parameters" nil nil nil "/home/kozielki/.config/emacs/snippets/latex-mode/expectedvalue" nil nil)
 		       ("al" "\\begin{align$1}\n  $2\n\\end{align$1}\n$0" "Math align environment" nil nil nil "/home/kozielki/.config/emacs/snippets/latex-mode/alignenvironment" nil nil)))
 
-
 ;;; Do not edit! File generated at Thu Sep 19 10:56:43 2024
