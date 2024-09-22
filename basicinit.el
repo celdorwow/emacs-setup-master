@@ -1,11 +1,24 @@
+(defun frame-center ()
+  "Center the current frame"
+  (let* ((dw (display-pixel-width))
+	 (dh (display-pixel-height))
+         (f (selected-frame))
+         (fw (frame-pixel-width))
+         (fh (frame-pixel-height))
+         (x (/ (- dw fw) 2))
+         (y (/ (- dh fh) 2)))
+    (message (format "dw %d | dh %d | fw %d | fh %d | x %d | y %d" dw dh fw fh x y))
+    (set-frame-position f x 20)))
+
 ;;disable splash screen and startup message
 (setq inhibit-startup-message t)
 ;(setq initial-scratch-message nil)
 
-
 ;; Resize window
 (setq frame-inhibit-implied-resize t)
-(setq default-frame-alist '((left . 238) (top . 16) (width . 105) (height . 40)))
+
+(setq default-frame-alist '((left . 160) (top . 20) (width . 110) (height . 40)))
+
 (defun x/disable-scroll-bars (frame)
   (modify-frame-parameters frame '((horizontal-scroll-bars . nil)
                                    (vertical-scroll-bars . nil))))
