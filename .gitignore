@@ -8,4 +8,6 @@
 !setup-lsp.el
 !setup-treemacs.el
 !setup-org.el
+!init.el
+!basicinit.el
 !files-in-main.txt

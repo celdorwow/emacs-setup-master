@@ -125,6 +125,18 @@
 (use-package pdf-tools
   :config (pdf-tools-install))
 
+(use-package lua-mode
+  :custom
+  (lua-indent-level 2))
+
+;; Usage:
+;; (wrap-region-add-wrapper "OS" "CS" "TS" 'org-mode))
+;; with:
+;; OS - open symbol, CS - close symbol, TS - type symbol and activating mode
+(use-package wrap-region
+  :defer t
+  :hook (org-mode)
+  :config (wrap-region-add-wrapper "/" "/" "/" 'org-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; "Might setup later" content
